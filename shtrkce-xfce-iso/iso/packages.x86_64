@@ -135,7 +135,8 @@ xfce4-goodies
 os-prober
 
 #Software
-yay-bin
+yay-git
+paru-git
 neofetch
 sublime-text-4
 networkmanager
