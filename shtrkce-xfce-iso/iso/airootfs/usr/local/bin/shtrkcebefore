@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "#################################"
+echo "Start shtrkcebefore"
+echo "#################################"
+
+echo "Populate Core Team keys"
+echo "#################################"
+pacman-key --init
+pacman-key --populate

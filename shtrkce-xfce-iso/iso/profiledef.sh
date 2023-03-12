@@ -2,10 +2,10 @@
 # shellcheck disable=SC2034
 
 iso_name="shtrkce-xfce"
-iso_label="shtrkce-xfce_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
-iso_publisher=" shtrkce Linux <https://github.com/bojanstrkovski-21/>"
-iso_application="Arch Linux Live/Rescue CD"
-iso_version="$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y.%m.%d)"
+iso_label="shtrkce-xfce_$(date +%Y%m)"
+iso_publisher="shtrkce-xfce <https://github.com/bojanstrkovski-21/>"
+iso_application="shtrkce-xfce Live/Rescue CD"
+iso_version="$(date +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=('iso')
 bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito'
@@ -16,12 +16,17 @@ pacman_conf="pacman.conf"
 airootfs_image_type="squashfs"
 airootfs_image_tool_options=('-comp' 'xz' '-Xbcj' 'x86' '-b' '1M' '-Xdict-size' '1M')
 file_permissions=(
-  ["/etc/shadow"]="0:0:400"
   ["/etc/gshadow"]="0:0:400"
+  ["/etc/shadow"]="0:0:400"
   ["/etc/sudoers"]="0:0:400"
+  ["/etc/sddm.conf.d/kde_settings.conf"]="0:0:400"
   ["/root"]="0:0:750"
   ["/root/.automated_script.sh"]="0:0:755"
   ["/usr/local/bin/choose-mirror"]="0:0:755"
   ["/usr/local/bin/Installation_guide"]="0:0:755"
   ["/usr/local/bin/livecd-sound"]="0:0:755"
+  ["/usr/local/bin/shtrkce-before"]="0:0:755"
+  ["/usr/local/bin/shtrkce-final"]="0:0:755"
+  ["/etc/grub.d/40_custom"]="0:0:755"
+  ["/usr/local/bin/arcolinux-snapper"]="0:0:755"
 )
